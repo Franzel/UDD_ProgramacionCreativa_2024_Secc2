@@ -32,3 +32,7 @@ function draw() {
     rect((anchoBarra+espacio)*i, posicionesY[i], anchoBarra, altoBarra, 10);
   }
 }
+
+function mousePressed() {
+  setup();
+}
