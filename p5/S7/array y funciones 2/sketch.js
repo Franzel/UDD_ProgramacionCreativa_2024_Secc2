@@ -16,13 +16,13 @@ function setup() {
   //vamos a rellenar nuestros arrays;
   for (let i = 0; i < nFilas; ++i) {
     //para hacer un array bidimensinal con arrays, hay que hacerlo de esta manera
-    //para cada elemento del array unidimensional, hay que crear un array dentro, quedanso asi de 2 dimensiones
+    //para cada elemento del array unidimensional, hay que crear un array dentro, quedando asi de 2 dimensiones
     angulos[i] = [];
-    velocidades[i] = [];
+    velocidades[i] = []; 
     colores[i] = [];
     tamanos[i] = [];
 
-    //una vez creado, yapodemos acceder a los array dentro del los array
+    //una vez creado, ya podemos acceder a los array dentro del los array
     for (let j = 0; j < nColumnas; ++j) {
       angulos[i][j] = random(360);
       velocidades[i][j] = random(-1, 1);
@@ -36,9 +36,9 @@ function draw() {
   background(255);
 
   //llamar a la funcion randomizar cada cierta cantidad de cuadros
-  if (frameCount % 30 == 0) {
-    randomizar();
-  }
+  // if (frameCount % 30 == 0) {
+  //   randomizar();
+  // }
 
   for (let i = 0; i < velocidades[0].length; ++i) {
     for (let j = 0; j < velocidades[1].length; ++j) {
@@ -51,9 +51,6 @@ function draw() {
 function figura(x, y, t, r, c) {
   push();
   translate(x, y);
-  noStroke();
-  fill(c / 3, 50);
-  ellipse(0, 0, 50, 50);
   rotate(radians(r));
   fill(c);
   stroke(c * 3);
